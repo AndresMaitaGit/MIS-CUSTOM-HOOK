@@ -1,6 +1,8 @@
 # useForm
 
 ```
+FORMA DE USO:
+
     const initForm = {
         name: '',
         age: 0,
@@ -9,10 +11,12 @@
 
     const [ formValues, handleInputChange, reset ] = useForm( initialForm );
 
+
+
+
+
     EJEMPLO:
 
-
-    
 export const SearchScreen = () => {
 
     const heroesFiltered = heroes;
@@ -22,14 +26,14 @@ export const SearchScreen = () => {
     
     const {searchText} = formValues;
     
-    const handleSearch = (e) => {
+   const handleSearch = (e) => {
         e.preventDefault();
-        console.log('searchText');
+        console.log(searchText);
     }
 
 
             return (
-                    <form >
+                    <form onSubmit={handleSearch}>
                         <input 
                             type="text"
                             placeholder="Buscar Héroe"
